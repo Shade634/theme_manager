@@ -11,7 +11,7 @@ if (TYPO3_MODE == 'BE') {
 		'm1',
 		'after:Extensionmanager', // Position
 		array(
-			'Theme' => 'index',
+			'Theme' => 'index,ter',
 		),
 		array(
 			'access' => 'user,group',

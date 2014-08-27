@@ -48,6 +48,13 @@ class ThemeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 	}
 
 	/**
+	 * @return void
+	 */
+	public function terAction() {
+
+	}
+
+	/**
 	 * @param string $identifier
 	 * @return void
 	 */
