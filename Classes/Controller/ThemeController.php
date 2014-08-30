@@ -34,10 +34,17 @@ class ThemeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 	protected $themeRepository;
 
 	/**
+	 * @var \TYPO3\CMS\Extensionmanager\Utility\ListUtility
+	 * @inject
+	 */
+	protected $listUtility;
+
+	/**
 	 * Initialize default action
 	 * @return void
 	 */
 	public function initializeAction() {
+		$this->listUtility = new \TYPO3\CMS\Extensionmanager\Utility\ListUtility();
 		$this->themeRepository = new \TYPO3\CMS\ThemesManager\Domain\Repository\TerThemeRepository();
 	}
 	/**
@@ -51,7 +58,8 @@ class ThemeController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 	 * @return void
 	 */
 	public function terAction() {
-
+		$results = $this->listUtility->getAvailableAndInstalledExtensionsWithAdditionalInformation();
+		debug($results);
 	}
 
 	/**
